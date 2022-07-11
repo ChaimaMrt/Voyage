@@ -1,0 +1,97 @@
+package tn.esprit.pidev.entities;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Commentaire {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private  Long idcom; 
+	@ManyToOne
+	private Publication pubcomm;
+	
+	/*@ManyToOne
+	private Employe empcommentaire;*/
+
+	@OneToMany(mappedBy="commentaire")	
+	private List<Employe>employes;
+	
+	//cons
+	
+
+
+	public List<Employe> getEmployes() {
+		return employes;
+	}
+
+
+
+	public void setEmployes(List<Employe> employes) {
+		this.employes = employes;
+	}
+
+
+
+
+	
+	
+//Getters and Setters
+
+/*	public Employe getEmpcommentaire() {
+		return empcommentaire;
+	}
+
+
+	public void setEmpcommentaire(Employe empcommentaire) {
+		this.empcommentaire = empcommentaire;
+	}*/
+
+	
+	public Commentaire(Long idcom, Publication pubcomm, List<Employe> employes, String com) {
+		super();
+		this.idcom = idcom;
+		this.pubcomm = pubcomm;
+		this.employes = employes;
+		this.com = com;
+	}
+
+
+
+	public String getCom() {
+	return com;
+}
+
+public Long getIdcom() {
+	return idcom;
+}
+
+public void setIdcom(Long idcom) {
+	this.idcom = idcom;
+}
+
+public void setCom(String com) {
+	this.com = com;
+}
+private String com;
+
+
+public Commentaire() {
+	super();
+}
+public Publication getPubcomm() {
+	return pubcomm;
+}
+public void setPubcomm(Publication pubcomm) {
+	this.pubcomm = pubcomm;
+}
+
+
+}

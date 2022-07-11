@@ -1,0 +1,89 @@
+package tn.esprit.pidev.entities;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Invitation {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int IdInvitation;
+	
+
+	private String Titre;
+	private String DateInvit; 
+	private String Mail;
+	
+
+	
+	//Constructeur
+	public Invitation(int idInvitation, String titre, String dateInvit, String mail, Invitation inv,
+			List<Employe> emps) {
+		super();
+		IdInvitation = idInvitation;
+		Titre = titre;
+		DateInvit = dateInvit;
+		Mail = mail;
+		
+
+	
+	//Getters and setters 
+	
+
+	public int getIdInvitation() {
+		return IdInvitation;
+	}
+
+
+	public void setIdInvitation(int idInvitation) {
+		IdInvitation = idInvitation;
+	}
+
+
+	public String getTitre() {
+		return Titre;
+	}
+
+
+	public void setTitre(String titre) {
+		Titre = titre;
+	}
+
+
+	public String getDateInvit() {
+		return DateInvit;
+	}
+
+
+	public void setDateInvit(String dateInvit) {
+		DateInvit = dateInvit;
+	}
+
+
+	public String getMail() {
+		return Mail;
+	}
+
+
+	public void setMail(String mail) {
+		Mail = mail;
+	}
+
+
+	
+
+
+
+	
+	
+}

@@ -1,0 +1,14 @@
+package tn.esprit.pidev.services;
+
+import tn.esprit.pidev.entities.Employe;
+import tn.esprit.pidev.entities.Voyage;
+
+public class IVoyageService {
+
+	Long ModifierVoyage(Voyage voyage);
+	Long AjouterVoyage(Voyage voyage);
+	void SupprimerVoyage(Long idVoyage);
+	Employe getVoyageById(Long idVoyage);
+	
+	
+}

@@ -1,0 +1,43 @@
+package tn.esprit.pidev.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import tn.esprit.pidev.entities.Commentaire;
+import tn.esprit.pidev.repositories.CommentaireRepository;
+
+@Service
+public class CommentaireService implements ICommentaireService{
+
+	
+	@Override
+	public Long ModifierCommentaire(Commentaire commentaire) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Long AjouterCommentaire(Commentaire commentaire) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void SupprimerCommentaire(Long idCommentaire) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Commentaire getCommentaireById(Long idCommentaire) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Autowired
+	CommentaireRepository commentaireRepository;
+	
+	
+	
+
+}

@@ -1,0 +1,29 @@
+package tn.esprit.pidev.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import tn.esprit.pidev.entities.Employe;
+import tn.esprit.pidev.services.EmployeService;
+import tn.esprit.pidev.services.IEmployeService;
+
+@RestController
+public class EmployeRestController {
+
+	@Autowired
+	IEmployeService employeService;
+
+	@PostMapping("/ajouterEmploye")
+	@ResponseBody
+	public Employe addEmploye(@RequestBody Employe employe) {
+		EmployeService.AjouterEmploye(employe);
+		return employe;
+	}
+
+	
+	
+	
+}

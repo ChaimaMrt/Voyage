@@ -1,0 +1,101 @@
+package tn.esprit.pidev.entities;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Publication {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idPublication;
+	private String contenue;
+	
+
+	@OneToMany(mappedBy="pubreac")	
+	private List<Reaction>reac;
+
+	@OneToMany(mappedBy="pubcomm")	
+	private List<Commentaire>comm;
+	
+	
+
+	@ManyToOne
+	private Employe employepublication;
+	//const
+
+
+	public Publication(int idPublication, String contenue, List<Reaction> reac, List<Commentaire> comm,
+			Employe employepublication) {
+		super();
+		this.idPublication = idPublication;
+		this.contenue = contenue;
+		this.reac = reac;
+		this.comm = comm;
+		this.employepublication = employepublication;
+	
+
+
+
+
+//Getters and setters
+
+	public Employe getEmployepublication() {
+		return employepublication;
+	}
+	
+	
+	public void setEmployepublication(Employe employepublication) {
+		this.employepublication = employepublication;
+	}
+	public int getIdPublication() {
+		return idPublication;
+	}
+
+
+	public void setIdPublication(int idPublication) {
+		this.idPublication = idPublication;
+	}
+
+
+	public String getContenue() {
+		return contenue;
+	}
+
+
+	public void setContenue(String contenue) {
+		this.contenue = contenue;
+	}
+
+	
+	
+	public List<Commentaire> getComm() {
+		return comm;
+	}
+
+	public void setComm(List<Commentaire> comm) {
+		this.comm = comm;
+	}
+
+	public List<Reaction> getReac() {
+		return reac;
+	}
+
+	public void setReac(List<Reaction> reac) {
+		this.reac = reac;
+	}
+
+
+
+	
+	
+}

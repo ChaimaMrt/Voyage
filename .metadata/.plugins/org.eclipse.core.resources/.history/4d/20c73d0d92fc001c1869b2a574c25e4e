@@ -1,0 +1,33 @@
+package tn.esprit.pidev;
+
+import java.text.ParseException;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import tn.esprit.pidev.services.IEmployeService;
+
+public class EmployeTest {
+
+	
+	@Autowired
+	private IEmployeService sessionService;
+	
+	
+	@Test
+	public void addEmploye() throws ParseException {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+		Date dateDebut = dateFormat.parse("2021-05-15");
+		Date dateFin = dateFormat.parse("2021-05-18");
+		Session session = new Session();
+		session.setDateDebut(dateDebut);
+		session.setDateFin(dateFin);
+		session.setDuree(100l);
+		session.setDescription("Test et spring");
+		Long id = sessionService.addSession(session);
+		//assertEquals(15, id);
+		assertThat(id).isNotNull();
+	}
+	
+}

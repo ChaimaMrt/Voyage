@@ -1,0 +1,13 @@
+package tn.esprit.pidev.services;
+
+import tn.esprit.pidev.entities.Commentaire;
+import tn.esprit.pidev.entities.Employe;
+
+public interface ICommentaireService {
+
+	Long ModifierCommentaire(Commentaire commentaire);
+	Long AjouterCommentaire(Commentaire commentaire);
+	void SupprimerCommentaire(Long idCommentaire);
+	Commentaire getCommentaireById(Long idCommentaire);
+	
+}

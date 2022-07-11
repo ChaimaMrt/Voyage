@@ -1,0 +1,27 @@
+package tn.esprit.pidev.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import tn.esprit.pidev.entities.Employe;
+import tn.esprit.pidev.repositories.EmployeRepository;
+
+@Service
+public class EmployeService implements IEmployeService {
+	
+	@Autowired
+	EmployeRepository EmployeRepository;
+	
+	@Override
+	public Long modifierEmploye(Employe employe) {
+		EmployeRepository.save(employe);
+		return (long) employe.getIdEmploye();
+	}
+	@Override
+		public Long addSession(Employe employe) {
+			EmployeRepository.save(employe);
+			return (long) employe.getIdEmploye();
+
+}
+	
+}

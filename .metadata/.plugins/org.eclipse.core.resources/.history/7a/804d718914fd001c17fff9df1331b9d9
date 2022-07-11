@@ -1,0 +1,82 @@
+package tn.esprit.pidev.entities;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Publication {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idPublication;
+	private String contenue;
+	
+	
+	
+	//const
+
+public Publication(int idPublication, String contenue, List<Commentaire> comm, List<Reaction> reac) {
+		super();
+		this.idPublication = idPublication;
+		this.contenue = contenue;
+		this.comm = comm;
+		this.reac = reac;
+	}
+
+
+//Getters and setters
+	public int getIdPublication() {
+		return idPublication;
+	}
+
+
+	public void setIdPublication(int idPublication) {
+		this.idPublication = idPublication;
+	}
+
+
+	public String getContenue() {
+		return contenue;
+	}
+
+
+	public void setContenue(String contenue) {
+		this.contenue = contenue;
+	}
+
+	@OneToMany(mappedBy="pubcomm")	
+	private List<Commentaire>comm;
+	
+	public List<Commentaire> getComm() {
+		return comm;
+	}
+
+	public void setComm(List<Commentaire> comm) {
+		this.comm = comm;
+	}
+
+	public List<Reaction> getReac() {
+		return reac;
+	}
+
+	public void setReac(List<Reaction> reac) {
+		this.reac = reac;
+	}
+
+
+	@OneToMany(mappedBy="pubreac")	
+	private List<Reaction>reac;
+
+
+	
+	
+}

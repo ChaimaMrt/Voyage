@@ -1,0 +1,41 @@
+package tn.esprit.pidev.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import tn.esprit.pidev.entities.Publication;
+
+
+@Service
+public class PublicationService implements IPublicationService{
+
+	
+	@Autowired
+	PublicationRepository publicationRepository;
+	@Override
+	public Long ModifierPublication(Publication publication) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Long AjouterPublication(Publication publication) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void SupprimerPublication(Long idPublication) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Publication getPublicationById(Long idPublication) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

@@ -1,0 +1,32 @@
+package tn.esprit.pidev;
+
+import java.text.ParseException;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import tn.esprit.pidev.entities.Employe;
+import tn.esprit.pidev.services.IEmployeService;
+
+public class EmployeTest {
+
+	
+	@Autowired
+	private IEmployeService sessionService;
+	
+	
+	@Test
+	public void addEmploye() throws ParseException {
+		
+		
+		Employe.setNom ("nom");
+		Employe.setTel ("tel");
+		
+		
+	
+		Long id = EmployeService.addEmploye(employe);
+		//assertEquals(15, id);
+		assertThat(id).isNotNull();
+	}
+	
+}

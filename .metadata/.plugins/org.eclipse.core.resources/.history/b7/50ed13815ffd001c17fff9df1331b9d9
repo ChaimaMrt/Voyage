@@ -1,0 +1,11 @@
+package tn.esprit.pidev.services;
+
+import tn.esprit.pidev.entities.Employe;
+
+public interface IHotelService {
+
+	Long ModifierHotel(Employe employe);
+	Long AjouterHotel(Employe employe);
+	void SupprimerHotel(Long idEmploye);
+	Employe getHotelById(Long idEmploye);
+}

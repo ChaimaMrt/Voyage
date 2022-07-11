@@ -1,0 +1,105 @@
+package tn.esprit.pidev.entities;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Entreprise {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idEntreprise;
+	private String NomEntreprise ;
+	private String Matrciule   ;
+	private String tel;
+	private String DomaineAcitivites;
+	@Enumerated(EnumType.STRING)
+	private ObjetVoyage ObjetVoyage;
+	
+	@OneToMany
+	private List<Publication>publications; 
+
+	
+	
+	//Constructeur
+	
+	public Entreprise(int idEntreprise, String nomEntreprise, String matrciule, String tel, String domaineAcitivites,
+			tn.esprit.pidev.entities.ObjetVoyage objetVoyage, List<Invitation> invit, List<Publication> pubs) {
+		super();
+		this.idEntreprise = idEntreprise;
+		NomEntreprise = nomEntreprise;
+		Matrciule = matrciule;
+		this.tel = tel;
+		DomaineAcitivites = domaineAcitivites;
+		ObjetVoyage = objetVoyage;
+		
+		
+	}
+
+	//Getters and setters
+	public int getIdEntreprise() {
+		return idEntreprise;
+	}
+
+	public void setIdEntreprise(int idEntreprise) {
+		this.idEntreprise = idEntreprise;
+	}
+
+	public String getNomEntreprise() {
+		return NomEntreprise;
+	}
+
+	public void setNomEntreprise(String nomEntreprise) {
+		NomEntreprise = nomEntreprise;
+	}
+
+	public String getMatrciule() {
+		return Matrciule;
+	}
+
+	public void setMatrciule(String matrciule) {
+		Matrciule = matrciule;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public String getDomaineAcitivites() {
+		return DomaineAcitivites;
+	}
+
+	public void setDomaineAcitivites(String domaineAcitivites) {
+		DomaineAcitivites = domaineAcitivites;
+	}
+
+	public ObjetVoyage getObjetVoyage() {
+		return ObjetVoyage;
+	}
+
+	public void setObjetVoyage(ObjetVoyage objetVoyage) {
+		ObjetVoyage = objetVoyage;
+	}
+
+	
+	
+
+
+	
+	
+	
+
+}

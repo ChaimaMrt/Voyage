@@ -1,0 +1,10 @@
+package tn.esprit.pidev.controllers;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RequestMapping("/Hotel")
+@RestController
+public class HotelRestController {
+
+}
